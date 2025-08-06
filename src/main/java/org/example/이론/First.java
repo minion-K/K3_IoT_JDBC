@@ -88,7 +88,7 @@ public class First {
             System.out.println("DB 와의 커넥션 중 오류 발생");
             e.printStackTrace(); // - 예외 발생 시 예외 메시지 + 호출 스택 정보 출력(예외 발생지 출력)
         } finally {
-//            자원 해제(자바 7 버전 이상 - 자동 자원 해제_ >> 생략 가능
+//            자원 해제(자바 7 버전 이상 - 자동 자원 해제 >> 생략 가능
             try {
                 if(conn != null && stmt != null && rs != null) {
                     // DB connection이 모두 존재한다면
