@@ -34,13 +34,16 @@ public class MemberDao {
         PreparedStatement pstmt = conn.prepareStatement(sql);
 
         ResultSet rs = pstmt.executeQuery();
+
         List<Member> members = new ArrayList<>();
+
         while(rs.next()) {
             Member member = new Member(
                     rs.getInt("id"),
                     rs.getString("name"),
                     rs.getString("email")
             );
+            members.add(member);
         }
         rs.close();
         pstmt.close();
@@ -91,7 +94,7 @@ public class MemberDao {
             String str = "hello";
             str += " JDBC"; // str에 " JDBC" 추가가 아니라 기존 문자열은 버려지고 새로운 String 객체 저장
             
-            StringBuilder sql = new StringBuilder("UPDATE members SET");
+            StringBuilder sql = new StringBuilder("UPDATE members SET ");
             if(updateName) {
                 sql.append("name = ?,"); // 이후의 Email 추가 여부가 미정
             }
@@ -122,6 +125,7 @@ public class MemberDao {
             pstmt.executeUpdate();
 
             pstmt.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

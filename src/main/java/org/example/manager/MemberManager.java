@@ -103,7 +103,7 @@ public class MemberManager {
         System.out.println("사용자의 새 이름 (변경하지 않으려면 Enter)");
         String newName = sc.nextLine();
 
-        System.out.println("사용자의 새 이메일 (변경하지 않으려면 Enter");
+        System.out.println("사용자의 새 이메일 (변경하지 않으려면 Enter)");
         String newEmail = sc.nextLine();
 
         if(!newName.isEmpty()) {
